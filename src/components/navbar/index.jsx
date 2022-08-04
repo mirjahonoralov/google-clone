@@ -3,13 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { Container, Left, Section, Sections, Theme, Wrapper } from "./style";
 import { Search } from "../Search";
 import { useState } from "react";
-import { useResultContext } from "../../contexts/ResultContextProvider";
 import { BsLightbulbFill } from "react-icons/bs";
 import { MdOutlineNightlight } from "react-icons/md";
 import { FcSearch } from "react-icons/fc";
 
 export const Navbar = ({ darkTheme, setDarkTheme }) => {
-  const { searchTerm, setSearchTerm, getResults } = useResultContext();
   const { pathname } = useLocation();
 
   const [sections, setSections] = useState([
