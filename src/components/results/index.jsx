@@ -14,8 +14,7 @@ import {
 } from "./style";
 
 export const Results = ({ darkTheme }) => {
-  const { getResults, results, loading, setSearchTerm, searchTerm } =
-    useResultContext();
+  const { getResults, results, loading, searchTerm } = useResultContext();
   const location = useLocation();
 
   useEffect(() => {
@@ -24,6 +23,7 @@ export const Results = ({ darkTheme }) => {
         getResults(`/search/q=${searchTerm} video`);
       else getResults(`${location.pathname}/q=${searchTerm}&num=30`);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm, location.pathname]);
 
   if (loading) return <Loading />;

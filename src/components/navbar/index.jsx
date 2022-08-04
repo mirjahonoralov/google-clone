@@ -34,7 +34,7 @@ export const Navbar = ({ darkTheme, setDarkTheme }) => {
           else return { ...item, active: false };
         });
       });
-  }, []);
+  }, [pathname]);
 
   return (
     <Container darkTheme={darkTheme}>
