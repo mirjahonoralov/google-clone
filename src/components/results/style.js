@@ -46,6 +46,10 @@ export const ImagesWrapper = styled.div`
       width: 200px;
     }
   }
+
+  @media (max-width: 800px) {
+    padding: 20px;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -67,6 +71,10 @@ export const VideosWrapper = styled.div`
   flex-direction: column;
   gap: 30px;
   width: 100%;
+
+  @media (max-width: 800px) {
+    padding: 20px;
+  }
 `;
 
 export const VideoWrapper = styled.div`
@@ -74,6 +82,8 @@ export const VideoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+
   a {
     h2 {
       font-size: 22px;
@@ -85,13 +95,40 @@ export const VideoWrapper = styled.div`
 export const PlayerWrapper = styled.div`
   display: flex;
   gap: 20px;
+  width: 100%;
   /* width: 300px; */
 
   .videoPlayer {
     width: 250px !important;
+    height: 140px !important;
   }
 
   p {
-    width: 60%;
+    width: 500px;
+  }
+
+  @media (max-width: 950px) {
+    p {
+      width: 250px;
+    }
+
+    .videoPlayer {
+      width: 150px !important;
+      height: 100px !important;
+    }
+  }
+
+  @media (max-width: 470px) {
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+      width: auto;
+    }
+
+    .videoPlayer {
+      width: 250px !important;
+      height: 140px !important;
+    }
   }
 `;

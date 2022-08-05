@@ -65,11 +65,8 @@ export const Results = ({ darkTheme }) => {
                 <PlayerWrapper>
                   <ReactPlayer
                     url={video?.additional_links?.[0]?.href}
-                    width="250px"
-                    height="140px"
                     controls
                     className="videoPlayer"
-                    style={{ width: "250px !important" }}
                     key={index}
                   />
                   <div>

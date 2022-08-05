@@ -83,10 +83,17 @@ export const Sections = styled.div`
 export const Section = styled(NavLink)`
   cursor: pointer;
   font-size: 20px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
   border-bottom: ${({ isActive, darkTheme }) =>
     isActive && !darkTheme
       ? "3px solid #000"
       : isActive && darkTheme && "3px solid #fff"};
+
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
 `;
 
 export const Theme = styled.div`

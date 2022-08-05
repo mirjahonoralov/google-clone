@@ -4,17 +4,32 @@ import { Container, Left, Section, Sections, Theme, Wrapper } from "./style";
 import { Search } from "../Search";
 import { useState } from "react";
 import { BsLightbulbFill } from "react-icons/bs";
-import { MdOutlineNightlight } from "react-icons/md";
+import { MdOutlineNightlight, MdSlowMotionVideo } from "react-icons/md";
 import { FcSearch } from "react-icons/fc";
+import { AiOutlineSearch } from "react-icons/ai";
+import { FiImage } from "react-icons/fi";
+import { BiNews } from "react-icons/bi";
 
 export const Navbar = ({ darkTheme, setDarkTheme }) => {
   const { pathname } = useLocation();
 
   const [sections, setSections] = useState([
-    { name: "All", id: 1, active: true, url: "/search" },
-    { name: "Images", id: 2, active: false, url: "/image" },
-    { name: "Videos", id: 3, active: false, url: "/video" },
-    { name: "News", id: 4, active: false, url: "/news" },
+    {
+      name: "All",
+      id: 1,
+      active: true,
+      url: "/search",
+      icon: <AiOutlineSearch />,
+    },
+    { name: "Images", id: 2, active: false, url: "/image", icon: <FiImage /> },
+    {
+      name: "Videos",
+      id: 3,
+      active: false,
+      url: "/video",
+      icon: <MdSlowMotionVideo />,
+    },
+    { name: "News", id: 4, active: false, url: "/news", icon: <BiNews /> },
   ]);
 
   const selectSection = (id) => {
@@ -70,7 +85,7 @@ export const Navbar = ({ darkTheme, setDarkTheme }) => {
             key={item.id}
             onClick={() => selectSection(item.id)}
           >
-            {item.name}
+            {item.icon} {item.name}
           </Section>
         ))}
       </Sections>
