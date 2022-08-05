@@ -23,7 +23,9 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 800px) {
-    padding: 0 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
   }
 `;
 

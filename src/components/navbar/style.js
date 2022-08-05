@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
   border-bottom: 2px solid silver;
-  /* padding-bottom: 20px; */
   color: ${({ darkTheme }) => (darkTheme ? "#fff" : "#000")};
   background: ${({ darkTheme }) => (darkTheme ? "#3e3e42" : "#fff")};
+  width: 100%;
 `;
 
 export const Wrapper = styled.div`
@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   padding: 0 90px;
   align-items: center;
+  width: 100%;
 
   color: ${({ darkTheme }) => (darkTheme ? "#fff" : "#000")};
   background: ${({ darkTheme }) => (darkTheme ? "#3e3e42" : "#fff")};
@@ -30,6 +31,7 @@ export const Left = styled.div`
   display: flex;
   gap: 50px;
   align-items: center;
+  width: 100%;
 
   a {
     font-size: 24px;
@@ -40,7 +42,7 @@ export const Left = styled.div`
     border-radius: 40px;
     height: 45px;
     padding-left: 25px;
-    width: 600px;
+    width: 70%;
     box-shadow: 0 0 10px #dedddd;
     background: ${({ darkTheme }) => (darkTheme ? "#3e3e42" : "#fff")};
   }
@@ -49,6 +51,20 @@ export const Left = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 650px) {
+    position: relative;
+    margin-bottom: 50px;
+    input {
+      position: absolute;
+      top: 50px;
+      width: 85vw;
+    }
   }
 `;
 

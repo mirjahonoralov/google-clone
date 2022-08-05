@@ -12,13 +12,13 @@ export const Search = () => {
   }, [debouncedValue, setSearchTerm]);
 
   return (
-    <div>
+    <>
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
       {!text && <button onClick={() => setText("")}>X</button>}
-    </div>
+    </>
   );
 };
